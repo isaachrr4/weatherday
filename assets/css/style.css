@@ -18,7 +18,7 @@ h3{
     font-weight: bold;
 }
 .forecast{
-    
+    background-color: gray;
     font-size: 0.9em;
 }
 span{
@@ -31,4 +31,12 @@ li:hover{
 .jumbotron{
     color:chartreuse;
     background-color:darkblue
+}
+.btn{
+    color: red;
+    border: 2px solid green;
+}
+
+.btn:hover{
+    color: gold
 }

@@ -7,8 +7,8 @@ var deleteButton = $("#delete-history");
 var currentCity = $("#current-city");
 var showTemperature = $("#temperature");
 var showHumidty= $("#humidity");
-var currentWSpeed=$("#wind-speed");
-var currentUvindex= $("#uv-index");
+var windSpeed=$("#wind-speed");
+var uvIndex= $("#uv-index");
 var sCity=[];
 
 function find(c){
@@ -55,9 +55,8 @@ function showWeather(city){
         //Display Wind speed and convert to MPH
         var ws=response.wind.speed;
         var windsmph=(ws*2.237).toFixed(1);
-        $(currentWSpeed).html(windsmph+"MPH");
+        $(windSpeed).html(windsmph+"MPH");
         // Display UVIndex.
-        //By Geographic coordinates method and using appid and coordinates as a parameter we are going build our uv query url inside the function below.
         UVIndex(response.coord.lon,response.coord.lat);
         forecast(response.id);
         if(response.cod==200){
@@ -89,7 +88,7 @@ function UVIndex(ln,lt){
             url:uvqURL,
             method:"GET"
             }).then(function(response){
-                $(currentUvindex).html(response.value);
+                $(uvIndex).html(response.value);
             });
 }
     
@@ -159,6 +158,6 @@ function deleteHistory(event){
 }
 
 $("#search-button").on("click",displayWeather);
-$(document).on("click",PastSearch);
+$(document).on("click",oldSearch);
 $(window).on("load",lastCity);
 $("#delete-history").on("click",deleteHistory);
