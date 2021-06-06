@@ -28,3 +28,7 @@ li:hover{
     background-color: darkcyan;
     text-decoration: underline;
 }
+.jumbotron{
+    color:chartreuse;
+    background-color:darkblue
+}
