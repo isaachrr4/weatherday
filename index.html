@@ -2,98 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>WeatherDay</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <style>
-        body {
-          background-image: url('./assets/images/FIR_ITV_RuralFireRisk_Weather_CloudySky_123RF_901534.jpg');
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          background-size: cover;
-        }
-        </style>
 </head>
 <body>
-    
-    <div class="jumbotron container-fluid mt-2 text-center p-2">
-        <h1> WeatherDay</h1>
-    </div>
-    <div class="container">
-        
-        <div class="row">
-            <div class="col-sm-4 bg-light">  
-                <h4 class="pt-1"><strong>Find City:</strong></h4>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control"id="find-city" >
-                    <div class="input-group-append">
-                        <button class=" btn bg-primary text-light" id="search-button"><i class="fa fa-search"></i></button>
-                    </div>
-                </div>
-               
-                <button class=" btn btn-primary" type="button" id="delete-history">Delete history</button>
-                <ul class="list-group">
-
-                </ul>
-            </div>   
-            <div class="col-sm-8">
-                <div class="row ml-2">
-                    <div class="col-sm-12" id="current-weather">
-                        <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
-                        <p>Temperature:<span class="current" id="temperature"></span></p>
-                        <p>Humidity:<span class="current" id="humidity"></span></p> 
-                        <p>Wind Speed:<span class="current" id="wind-speed"></span></p>
-                        <p>UV index:<span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p> 
-                    </div>
-                </div>
-                
-                <div class="col-sm-12" id ="upcoming-weather">
-                    <h3>5-Day Forecast:</h3>
-                    <div class="row text-light">
-                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
-                            <p id="fDate0"></p>
-                            <p id="fImg0"></p>
-                            <p>Temp:<span id="fTemp0"></span></p>
-                            <p>Humidity:<span id="fHumidity0"></span></p>
-                        </div>
-                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
-                            <p id="fDate1"></p>
-                            <p id="fImg1"></p>
-                            <p>Temp:<span id="fTemp1"></span></p>
-                            <p>Humidity:<span id="fHumidity1"></span></p>
-                        </div>
-                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                            <p id="fDate2"></p>
-                            <p id="fImg2"></p>
-                            <p>Temp:<span id="fTemp2"></span></p>
-                            <p>Humidity:<span id="fHumidity2"></span></p>
-                        </div>
-                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded">
-                            <p id="fDate3"></p>
-                            <p id="fImg3"></p>
-                            <p>Temp:<span id="fTemp3"></span></p>
-                            <p>Humidity:<span id="fHumidity3"></span></p>
-                        </div>
-                        <div class="col-sm-2 bg-primary forecast text-white ml-2 mb-3 p-2 mt-2 rounded" >
-                            <p id="fDate4"></p>
-                            <p id="fImg4"></p>
-                            <p>Temp:<span id="fTemp4"></span></p>
-                            <p>Humidity:<span id="fHumidity4"></span></p>
-                        </div>
-                    </div>
-                </div>
+    <h1>WeatherDay</h1>
+    <form action="/form/submit" method="GET"> 
+        <input type="text" name="text" class="search" placeholder="Find City">
+        <button type="submit" class="search" id="searchBtn"><i class="fa fa-search"></i></button>
+      </form>
+      <div class="row">
+          <div class="col-sm-12">
+              <div class="row m1-1">
+                  <div class="col-sm-12" id="showWeather">
+                      <div class="temp">Temp:    
+                      </div>
+                      <div class="wind">Wind Speed:</div>
+                      <div class="index">UVI:</div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <h3>5-Day Forecast</h3>
+      <div class="container px-5 py-5">
+        <div class="col mx-1">
+      <div class="row">
+            <div class="box" id="b1">
+                <div>UV index:<span id="currentIndex"></span></div>
+                <br>
+                <div>Temperature:<span id="showTemp"> F</span></div>
+                <br>
+                <div>Wind Speed:<span id="wSpeed"> MPH</span></div>
+                <br>
+                <div>Humidity:<span id="showHumid"> %</span></div>
+                <br>
+           
+        </div>
+        <div class="col mx-1">
+            
+                <div class="box" id="b2">
+                    <div>UV index:<span id="currentIndex"></span></div>
+                    <br>
+                    <div>Temperature:<span id="showTemp"> F</span></div>
+                    <br>
+                    <div>Wind Speed:<span id="wSpeed"> MPH</span></div>
+                    <br>
+                    <div>Humidity:<span id="showHumid"> %</span></div>
+                    <br>
                 
             </div>
-        </div>
-    </div>
-		
-    
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-    
-    <script src="assets/js/script.js"></script>
+            <div class="col mx-1">
+                
+                    <div class="box" id="b3">
+                        <div>UV index:<span id="currentIndex"></span></div>
+                        <br>
+                        <div>Temperature:<span id="showTemp"> F</span></div>
+                        <br>
+                        <div>Wind Speed:<span id="wSpeed"> MPH</span></div>
+                        <br>
+                        <div>Humidity:<span id="showHumid"> %</span></div>
+                        <br>
+                    
+                </div>
+                <div class ="col mx-1">
+                    
+                        <div class="box" id="b4">
+                            <div>UV index:<span id="currentIndex"></span></div>
+                            <br>
+                            <div>Temperature:<span id="showTemp"> F</span></div>
+                            <br>
+                            <div>Wind Speed:<span id="wSpeed"> MPH</span></div>
+                            <br>
+                            <div>Humidity:<span id="showHumid"> %</span></div>
+                            <br>
+                        
+                    </div>
+                    <div class="col mx-1">
+                        
+                            <div class="box" id="b5">
+                                <div>UV index:<span id="currentIndex"></span></div>
+                                <br>
+                                <div>Temperature:<span id="showTemp"> F</span></div>
+                                <br>
+                                <div>Wind Speed:<span id="wSpeed"> MPH</span></div>
+                                <br>
+                                <div>Humidity:<span id="showHumid"> %</span></div>
+                                <br>
+                            
+                        </div>
+                    </div>
+                        </div>
+                     
+     
+         
+      
 </body>
 </html>

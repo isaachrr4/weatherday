@@ -1,42 +1,25 @@
-*{
+* {
     box-sizing: border-box;
-    color: blue;
+  }
+
+  h1{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+
+  .box {
+    border: 1px solid blue ;
     
+  width: 15%;
 }
 
-body {
-    
-    font-size: 16px;
-    font-family:  sans-serif;
-   
-    
-}
-.h1{
-    color: darkred;
-}
-h3{
-    font-weight: bold;
-}
-.forecast{
-    background-color: gray;
-    font-size: 0.9em;
-}
-span{
-    font-size: 1em;
-}
-li:hover{
-    background-color: darkcyan;
-    text-decoration: underline;
-}
-.jumbotron{
-    color:chartreuse;
-    background-color:darkblue
-}
-.btn{
-    color: red;
-    border: 2px solid green;
-}
-
-.btn:hover{
-    color: gold
-}
+#b1, #b2, #b3, #b4, #b5 {
+    display:inline-block;
+    position: relative;
+    margin: 5px;
+    width:20%;
+    height:200px;
+    background-color: lightgrey;
+ }
+  
