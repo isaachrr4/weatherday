@@ -23,3 +23,10 @@
     background-color: lightgrey;
  }
   
+ .hero { 
+  background: url(../assets/images/jz_csweather_060619.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
